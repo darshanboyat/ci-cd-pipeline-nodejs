@@ -5,6 +5,15 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.get("/test", (req, res) => {
+  res.send(`
+        <div style="background-color: black; max-height: 100vh; max-width: 100vw;">
+            <h1 style="display: flex; justify-content: center; padding: 2rem 0rem; color: white;">Hello from server CI/CD pipeline --- OK TESTED</h1>
+        </div>
+    `);
+});
+
 app.get("/", (req, res) => {
   res.send(`
         <div style="background-color: black; max-height: 100vh; max-width: 100vw;">
